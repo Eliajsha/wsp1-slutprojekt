@@ -24,3 +24,17 @@ end
 def self.populate_tables
   db.excecute('INSERT INTO recipes(recipe_name, recipe, user_id, category_id) VALUES (Pannkakor, baka på för fan)')
 end
+
+private
+
+def self.db
+  @db ||= begin
+    db = SQLite3::Database.new(DB_PATH)
+    db.results_as_hash = true
+    db
+  end
+end
+
+end
+
+Seeder.seed!
