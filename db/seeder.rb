@@ -35,6 +35,6 @@ def self.db
   end
 end
 
-end
+
 
 Seeder.seed!

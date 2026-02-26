@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birgits receptsamling</title>
+    <link rel="stylesheet" type="text/css" href="/style.css?<%=Time.now.to_i%>">
+</head>
+<body>
+  <header>
+  <h1>Birgits receptsamling</h1>
+  </header>
+  <hr>
+  <nav>
+    <ul>
+      <li><a href="/other_recepies">Andras recept</a></li>
+      <li><a href="/my_recepies">Dina recept</a></li>
+    </ul>
+  </nav>
+  <hr>
+      <%= yield %>
+</body>
+</html>

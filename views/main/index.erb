@@ -1,0 +1,12 @@
+<h2>Alla recept Birgit har samlat</h2>
+
+<ul>
+    <%@recepies.each do |recepies| %>
+    <li>
+        <h3><%= recepies['name']%></h3>
+        <%= recepies['description']%>
+    </li>
+
+    <%end%>
+
+</ul>
