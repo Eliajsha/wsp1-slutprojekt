@@ -15,19 +15,19 @@ class App < Sinatra::Base
       return @db
     end
 
-    # Routen /
+    # Routen / 
     get '/' do
-        erb(:"main/index")
+        erb(:"recipes/index")
     end
 
-    get '/recepies' do
-      @recepies = db.execute("SELECT * FROM recepies")
-      p @recepies
-      erb(:"recepies/index")
+    get '/recipes' do
+      @recipes = db.execute("SELECT * FROM recipes")
+      p @recipes
+      erb(:"main/index")
     end
 
-    get '/recepies/:id' do | id |
-      @recepies = db.execute("SELECT * FROM recepies WHERE id=?", id).first
-      erb(:"recepies/show")
+    get '/recipes/:id' do | id |
+      @recipes = db.execute("SELECT * FROM recipes WHERE id=?", id).first
+      erb(:"main/show")
     end
 end

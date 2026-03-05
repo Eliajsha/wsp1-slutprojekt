@@ -1,10 +1,9 @@
 <h2>Alla recept Birgit har samlat</h2>
 
 <ul>
-    <%@recepies.each do |recepies| %>
+    <%@recipes.each do |recipes| %>
     <li>
-        <h3><%= recepies['name']%></h3>
-        <%= recepies['description']%>
+        <a href="/recipes/<%= recipes['id'] %>"><%= recipes['recipe_name'] %></a>
     </li>
 
     <%end%>
