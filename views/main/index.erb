@@ -1,11 +1,11 @@
+
 <h2>Alla recept Birgit har samlat</h2>
 
-<ul>
+<div class="recipe-grid">
     <%@recipes.each do |recipes| %>
-    <li>
-        <a href="/recipes/<%= recipes['id'] %>"><%= recipes['recipe_name'] %></a>
-    </li>
-
+            <a href="/recipes/<%= recipes['id'] %>" class="recipe-card">
+                <h3><%= recipes['recipe_name'] %></h3>
+                <p><%= recipes['category'] %></p>
+            </a>
     <%end%>
-
-</ul>
+</div>

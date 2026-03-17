@@ -1,4 +1,6 @@
-<h2>Mer info om: <%= @recipes['recipe_name'].capitalize %></h2>
+<img src="/img/<%= @recipes['id'] %>.jpg" alt="<%= @recipes['recipe_name'] %>" class="recipe-image">
+<h2><%= @recipes['recipe_name'].capitalize %></h2>
 
 <p><em>Beskrivning:</em> <%= @recipes['description'] %></p>
 <p><em>Kategori:</em> <%= @recipes['category'] %></p>
+<p><em>Rating:</em> <%= @recipes['rating'] %></p>
