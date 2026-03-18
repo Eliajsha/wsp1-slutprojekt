@@ -11,6 +11,7 @@ img {
   height: auto;
   display: block;
   margin-bottom: 1em;
+  border-radius: 14px;
 }
 
 .recipe-grid {
@@ -44,4 +45,59 @@ img {
 .recipe-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+.rating {
+  text-align: right;
+}
+
+.login-btn {
+  right: 0;
+  position: absolute;
+  top: 20px;
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #ff9a6c, #ff6b6b);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(255, 107, 107, 0.3);
+  transition: 0.2s ease;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(255, 107, 107, 0.4);
+}
+
+.login-btn:active {
+  transform: translateY(0);
+}
+
+.menu-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  margin-right: 12px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.2s ease;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.menu-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+}
+
+.my-btn {
+  background: linear-gradient(135deg, #7cc6fe, #4f8cff);
+  color: white;
+}
+
+.birgit-btn {
+  background: linear-gradient(135deg, #ffb36b, #ff7b54);
+  color: white;
 }

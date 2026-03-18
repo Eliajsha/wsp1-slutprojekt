@@ -4,8 +4,10 @@
 <div class="recipe-grid">
     <%@recipes.each do |recipes| %>
             <a href="/recipes/<%= recipes['id'] %>" class="recipe-card">
+                <img src="/img/<%= recipes['id'] %>.jpg">
                 <h3><%= recipes['recipe_name'] %></h3>
                 <p><%= recipes['category'] %></p>
+                <p class="rating"><%= recipes['rating'] %></p>
             </a>
     <%end%>
 </div>

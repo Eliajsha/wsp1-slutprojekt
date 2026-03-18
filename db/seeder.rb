@@ -31,7 +31,7 @@ end
 
 def self.populate_tables
   db.execute('INSERT INTO recipes(recipe_name, description, user_id, category, rating) VALUES ("Pannkakor", "baka på för fan", 2, "vegetariskt", "★★★★☆")')
-  db.execute('INSERT INTO recipes(recipe_name, description, user_id, category, rating) VALUES ("Köttbullar", "Du köttar köttet till en boll o sen lagar köttet till en köttbull", 1, "Animaliskt", "★★★★★")')
+  db.execute('INSERT INTO recipes(recipe_name, description, user_id, category, rating) VALUES ("Köttbullar med potatismos", "Du köttar köttet till en boll o sen lagar köttet till en köttbull o drämmer på potätmos med brunsås", 1, "Animaliskt", "★★★★★")')
   db.execute('INSERT INTO recipes(recipe_name, description, user_id, category, rating) VALUES ("Cesarsallad", "Blanda ihop lite grönsaker och en fet kyckling med sös o dammish", 1, "Animaliskt", "★★★☆☆")')
   db.execute('INSERT INTO recipes(recipe_name, description, user_id, category, rating) VALUES ("Grönsakswok", "Stek upp lite grönsaker och servera med ris", 2, "Vegetariskt", "★★☆☆☆")')
   db.execute('INSERT INTO recipes(recipe_name, description, user_id, category, rating) VALUES ("Lasagne", "Varva köttfärssås och bechamelsås och ost och pasta och sen in i ugnen", 1, "Animaliskt", "★★★★☆")')
