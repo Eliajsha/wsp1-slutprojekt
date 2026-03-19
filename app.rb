@@ -30,4 +30,14 @@ class App < Sinatra::Base
       @recipes = db.execute("SELECT * FROM recipes WHERE id=?", id).first
       erb(:"main/show")
     end
+
+    get '/login' do 
+      erb(:"users/login")
+    end
+
+    post '/login' do
+      request_username = params[:username]
+      request_plain_password = params[:password]
+      
+      user = db.execute("SELECT * FROM users WHERE username=?", request_username).first
 end

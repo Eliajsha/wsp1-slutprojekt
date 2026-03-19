@@ -1,5 +1,7 @@
 require 'sqlite3'
 require_relative '../config'
+require 'bcrypt'
+
 
 class Seeder
 
@@ -52,6 +54,20 @@ def self.db
 end
 end
 
+def self.drop_tables
+  db.execute('DROP TABLE IF EXISTS users')
+end
+
+def self.create_tables
+  db.execute('CREATE TABLE users (
+              id INTEGER PRIMARY KEY AUTOINCREMENT,
+              username TEXT NOT NULL,
+              password TEXT NOT NULL)')
+end
+
+def self.populate_tables
+  db.execute('INSERT INTO users(username, password) VALUES ("Elias", "123")')
+end
 
 
 Seeder.seed!
