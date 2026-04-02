@@ -77,4 +77,24 @@ class App < Sinatra::Base
         redirect '/login'
       end
     end
+
+
+
+    get '/user_recipes' do
+      @recipes = {}
+
+      db.execute("SELECT * FROM recipes").each do | recipe |
+        @recipes[recipe["id"]] = recipe
+      end
+
+      @user_recipes = db.execute("SELECT * FROM user_recipes WHERE user_id=?", @current_user["id"]).first
+      p @user_recipes
+      erb(:"users/user_recipes")
+    end
+
+    get '/user_recipes/:id' do | id |
+      @user_recipes = db.execute("SELECT * FROM user_recipes WHERE user_id=?", @current_user["id"]).first
+      erb(:"users/user_show")
+    end
+    
 end

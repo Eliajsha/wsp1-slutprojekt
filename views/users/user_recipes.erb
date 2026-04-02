@@ -1,2 +1,12 @@
-<h2> Dina recept </h2>
-    
+<h2>Alla dina recept</h2>
+
+<div class="recipe-grid">
+    <%@user_recipes.each do |user_recipes| %>
+            <a href="/recipes/<%= user_recipes["id"] %>" class="recipe-card">
+                <img src="/img/<%= user_recipes["id"] %>.jpg">
+                <h3><%= @recipes[user_recipes["id"]]["recipe_name"] %></h3>
+                <p><%= @recipes[user_recipes["id"]]['category'] %></p>
+                <p class="rating"><%= @recipes[user_recipes["id"]]['rating'] %></p>
+            </a>
+    <%end%>
+</div>
