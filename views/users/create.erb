@@ -1,0 +1,9 @@
+<h2>Nytt recept</h2>
+
+<form action="/recipes" method="post">
+    <label>Namn: <input type="text" name="recipe_name" required></label>
+    <label>Beskrivning: <input type="text" name="description" required></label>
+    <label>Kategori: <input type="text" name="category" required></label>
+    <label>Betyg: <input type="number" name="rating" min="0" max="5" required></label>
+    <input type="submit" value="Skapa recept">
+</form>

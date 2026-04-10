@@ -41,6 +41,29 @@ class App < Sinatra::Base
       erb(:"recipes/index")
     end
 
+    get '/recipes/create' do
+      erb(:"users/create")
+    end
+
+    post '/recipes' do
+      p params
+
+      r_name = params["recipe_name"]
+      r_description = params["description"]
+      r_category = params["category"]
+      r_rating = params["rating"]
+
+      db.execute("INSERT INTO recipes(recipe_name, description, category, rating) VALUES (?, ?, ?, ?)", r_name, r_description, r_category, r_rating)
+
+      recipe_id = db.last_insert_row_id
+
+      db.execute("INSERT INTO user_recipes(user_id, recipe_id) VALUES (?, ?)", @current_user["id"], recipe_id)
+
+      redirect("/user_recipes")
+    end
+
+    
+
     get '/recipes/:id' do | id |
       @recipes = db.execute("SELECT * FROM recipes WHERE id=?", id).first
       erb(:"recipes/show")
@@ -78,7 +101,10 @@ class App < Sinatra::Base
       end
     end
 
-
+    post '/logout' do
+      session.clear
+      redirect '/recipes'
+    end
 
     get '/user_recipes' do
       @recipes = {}
@@ -87,14 +113,13 @@ class App < Sinatra::Base
         @recipes[recipe["id"]] = recipe
       end
 
-      @user_recipes = db.execute("SELECT * FROM user_recipes WHERE user_id=?", @current_user["id"]).first
+      @user_recipes = db.execute("SELECT * FROM user_recipes WHERE user_id=?", @current_user["id"])
       p @user_recipes
       erb(:"users/user_recipes")
     end
 
     get '/user_recipes/:id' do | id |
-      @user_recipes = db.execute("SELECT * FROM user_recipes WHERE user_id=?", @current_user["id"]).first
+      @user_recipes = db.execute("SELECT * FROM user_recipes WHERE user_id=?", @current_user["id"])
       erb(:"users/user_show")
     end
-    
 end

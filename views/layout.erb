@@ -9,14 +9,26 @@
 <body>
   <header>
   <h1>Birgits receptsamling</h1>
+
+  <%if !session[:user_id]%>
   <a href="/login" class="login-btn">Logga in</a>
+  <%else%>
+  <form action="/logout" method="POST" style="display: inline;">
+    <button type="submit" class="logout-btn">Logga ut</button>
+  <%end%>
+
   </header>
   <hr>
   <nav>
     <ul>
+      <%if !session[:user_id]%>
+        <a href="/recipes" class=" menu-btn birgit-btn">Birgits samling</a>
+      <%else%>
+        <a href="/user_recipes" class="menu-btn my-btn">Dina recept</a>
+        <a href="/recipes" class=" menu-btn birgit-btn">Birgits samling</a>
+        <a href="/recipes/create" class="menu-btn create-btn">Skapa recept</a>
+      <%end%>
 
-      <a href="/user_recipes" class="menu-btn my-btn">Dina recept</a>
-      <a href="/recipes" class=" menu-btn birgit-btn">Birgits samling</a>
     </ul>
   </nav>
   <hr>

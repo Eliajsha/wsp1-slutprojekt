@@ -2,11 +2,11 @@
 
 <div class="recipe-grid">
     <%@user_recipes.each do |user_recipes| %>
-            <a href="/recipes/<%= user_recipes["id"] %>" class="recipe-card">
-                <img src="/img/<%= user_recipes["id"] %>.jpg">
-                <h3><%= @recipes[user_recipes["id"]]["recipe_name"] %></h3>
-                <p><%= @recipes[user_recipes["id"]]['category'] %></p>
-                <p class="rating"><%= @recipes[user_recipes["id"]]['rating'] %></p>
+            <a href="/recipes/<%= user_recipes["recipe_id"] %>" class="recipe-card">
+                <img src="/img/<%= user_recipes["recipe_id"] %>.jpg">
+                <h3><%= @recipes[user_recipes["recipe_id"]]["recipe_name"] %></h3>
+                <p><%= @recipes[user_recipes["recipe_id"]]['category'] %></p>
+                <p class="rating"><%= @recipes[user_recipes["recipe_id"]]['rating']%>/5</p>
             </a>
     <%end%>
 </div>

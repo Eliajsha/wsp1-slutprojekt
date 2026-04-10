@@ -45,15 +45,15 @@ class Seeder
   end
 
   def self.populate_tables
-    db.execute('INSERT INTO recipes(recipe_name, description, category, rating) VALUES ("Pannkakor", "baka på för fan", "vegetariskt", "★★★★☆")')
-    db.execute('INSERT INTO recipes(recipe_name, description, category, rating) VALUES ("Köttbullar med potatismos", "Du köttar köttet till en boll o sen lagar köttet till en köttbull o drämmer på potätmos med brunsås", "Animaliskt", "★★★★★")')
-    db.execute('INSERT INTO recipes(recipe_name, description, category, rating) VALUES ("Cesarsallad", "Blanda ihop lite grönsaker och en fet kyckling med sös o dammish", "Animaliskt", "★★★☆☆")')
-    db.execute('INSERT INTO recipes(recipe_name, description, category, rating) VALUES ("Grönsakswok", "Stek upp lite grönsaker och servera med ris", "Vegetariskt", "★★☆☆☆")')
-    db.execute('INSERT INTO recipes(recipe_name, description, category, rating) VALUES ("Lasagne", "Varva köttfärssås och bechamelsås och ost och pasta och sen in i ugnen", "Animaliskt", "★★★★☆")')
-    db.execute('INSERT INTO recipes(recipe_name, description, category, rating) VALUES ("Falafel", "Mixa ihop lite kikärtor och kryddor och gör bollar av det och fritera", "Vegetariskt", "★☆☆☆☆")')
-    db.execute('INSERT INTO recipes(recipe_name, description, category, rating) VALUES ("Sushi", "Rulla ihop lite ris och fisk och grönsaker i ett noriark", "Animaliskt", "★★★★★")')
-    db.execute('INSERT INTO recipes(recipe_name, description, category, rating) VALUES ("Vegetarisk lasagne", "Varva grönsaksfärssås och bechamelsås och ost och pasta och sen in i ugnen", "Vegetariskt", "★★★★☆")')
-    db.execute('INSERT INTO recipes(recipe_name, description, category, rating) VALUES ("Grönsaksgryta", "Koka ihop lite grönsaker i en god buljong", "Veganskt", "★★★☆☆")')
+    db.execute('INSERT INTO recipes(recipe_name, description, category, rating) VALUES ("Pannkakor", "baka på för fan", "vegetariskt", "4")')
+    db.execute('INSERT INTO recipes(recipe_name, description, category, rating) VALUES ("Köttbullar med potatismos", "Du köttar köttet till en boll o sen lagar köttet till en köttbull o drämmer på potätmos med brunsås", "Animaliskt", "5")')
+    db.execute('INSERT INTO recipes(recipe_name, description, category, rating) VALUES ("Cesarsallad", "Blanda ihop lite grönsaker och en fet kyckling med sös o dammish", "Animaliskt", "3")')
+    db.execute('INSERT INTO recipes(recipe_name, description, category, rating) VALUES ("Grönsakswok", "Stek upp lite grönsaker och servera med ris", "Vegetariskt", "2")')
+    db.execute('INSERT INTO recipes(recipe_name, description, category, rating) VALUES ("Lasagne", "Varva köttfärssås och bechamelsås och ost och pasta och sen in i ugnen", "Animaliskt", "4")')
+    db.execute('INSERT INTO recipes(recipe_name, description, category, rating) VALUES ("Falafel", "Mixa ihop lite kikärtor och kryddor och gör bollar av det och fritera", "Vegetariskt", "1")')
+    db.execute('INSERT INTO recipes(recipe_name, description, category, rating) VALUES ("Sushi", "Rulla ihop lite ris och fisk och grönsaker i ett noriark", "Animaliskt", "5")')
+    db.execute('INSERT INTO recipes(recipe_name, description, category, rating) VALUES ("Vegetarisk lasagne", "Varva grönsaksfärssås och bechamelsås och ost och pasta och sen in i ugnen", "Vegetariskt", "4")')
+    db.execute('INSERT INTO recipes(recipe_name, description, category, rating) VALUES ("Grönsaksgryta", "Koka ihop lite grönsaker i en god buljong", "Veganskt", "3")')
   
     db.execute('INSERT INTO user_recipes(user_id, recipe_id) VALUES (1, 1)')
 
